@@ -24,7 +24,7 @@ example 1 : A board on which no blocks can be placed corresponds to the empty se
 
 <img align="left" src="doc\AI\0.png"><br clear="left"/>
 
-example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $\emptyset $ is corresponds to the set with only one empty set as an element,  $ \{\\{\\\\{ \emptyset \} $.
+example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $\emptyset $ is corresponds to the set with only one empty set as an element,  $ \{\{ \emptyset \} $.
 
 <img align="left" src="doc\AI\1.png"><br clear="left"/>
 
