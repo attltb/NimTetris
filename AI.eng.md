@@ -22,7 +22,7 @@ OIS is defined as a set of sets of which elements are given by all possible next
 
 example 1 : A board on which no blocks can be placed corresponds to the empty set, 0.
 
-<p float="left"><img align="left" src="doc\AI\0.png"></p>
+<p float="left"><img src="doc\AI\0.png"></p>
 
 example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become 0 is corresponds to the set with only one empty set as an element, {0}.
 
