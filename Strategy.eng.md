@@ -14,7 +14,7 @@ One can greatly reduces remaining practical number of the cases by splitting pla
 
 ### 1) Example 1: (2, 2) separation
 
-<img align="left" src="doc/strategy/q1_0.png">
+<img align="left" src="doc/strategy/q1_0.png"><br clear="left"/>
 
 It seems difficult to find the best play in board like this where there still are 20 playable empty cells in the board. However, there is one simple way to secure the victory for the first player to play. If you want to solve the problem yourself, don't unfold the content below until you find the answer.
 
@@ -23,7 +23,7 @@ It seems difficult to find the best play in board like this where there still ar
 
 Divide the board into two playable areas of 8 cells using I-blocks as shown below.
 
-<img align="left" src="doc/strategy/q1_1.png">
+<img align="left" src="doc/strategy/q1_1.png"><br clear="left"/>
 
 The opponent can not win by any means now. If he uses all cells up in an area, you will be able to force him to put the last block by leaving 4 cells in the other area.
 
@@ -37,13 +37,13 @@ The point is that both areas can be filled with one or two blocks depending on t
 
 This winning method is similar to the (2, 2) winning method of the original Nim game. In Nim, victory is guaranteed by leaving (2, 2) stones to the opponent as shown below.
 
-<img align="left" img src="doc/strategy/q1_6.png">
+<img align="left" img src="doc/strategy/q1_6.png"><br clear="left"/>
 
 If your opponent removes one stone in a row, you would be able to force him to remove the last one by removing all the stones in the other row. If your opponent removes all the stones in a row, you would still be able to win by removing only one stone in the other row.
 
 Be careful, for an equal split doesn't always guarantee a win in Nim tetris unlike in the original Nim. The following split divides the board into two equal areas, but the splitter does not win.
 
-<img align="left" img src="doc/strategy/q1_7.png">
+<img align="left" img src="doc/strategy/q1_7.png"><br clear="left"/>
 
 In this case, there is no way to use all cells up in an area with one block. If one split the board like this, he would lose. The splitter can secure the win only when the two areas can be filled with one or two blocks. Thankfully, this kind of situation is fairly common in Nim tetris. Knowing a lot of winning separations like this will increase your chance to win greatly.
 
@@ -55,7 +55,7 @@ In this case, there is no way to use all cells up in an area with one block. If 
 
 There are a lot of winning separations known for the game. The following figure shows one of those formulas that comes up often in practice. If the board is spllited like this, the first player to play can not win by any means.
 
-<img align="left" img src="doc/strategy/q2.png">
+<img align="left" img src="doc/strategy/q2.png"><br clear="left"/>
 
 Check for yourself why the first player can't win, and how the opponent can counter each possible play of him.
 
@@ -67,7 +67,7 @@ Check for yourself why the first player can't win, and how the opponent can coun
 
 ### 1) Example 1: Split defense with centering
 
-<img align="left" img src="doc/strategy/q3_1.png">
+<img align="left" img src="doc/strategy/q3_1.png"><br clear="left"/>
 
 The first player loses by any other play. There is only one way to win. How? Unfolded the following content to find the answer.
 
@@ -76,7 +76,7 @@ The first player loses by any other play. There is only one way to win. How? Unf
 
 Just place the O-block in the center as shown below.
 
-<img align="left" img src="doc/strategy/q3_2.png">
+<img align="left" img src="doc/strategy/q3_2.png"><br clear="left"/>
 
 Now, no matter where the opponent play, there will be 8 connected cells remain. You can win by using only 4 cells among the 8 so that the opponent have to fill the last. For example, see the following picture.
 
@@ -84,11 +84,11 @@ Now, no matter where the opponent play, there will be 8 connected cells remain. 
 
 Centering is often useful as a way to prevent the separation of the board described above. For example, if there is a block floating in the middle of an area, it is impossible to split it by adding only one block.  
 
-<img align="left" img src="doc/strategy/q4_1.png">
+<img align="left" img src="doc/strategy/q4_1.png"><br clear="left"/>
 
 You can split it if you add *two* blocks, but it only means that if you try to split the board thoughtlessly, the opponent will have the chance to split it as they want. This in many cases leads to a favorable outcome for the opponent.
 
-<img align="left" img src="doc/strategy/q4_2.png">
+<img align="left" img src="doc/strategy/q4_2.png"><br clear="left"/>
 
 As a result of a hasty split attempt, the opponent's counterattack resulted in the situation of (2, 2) explained above. One may say that you got caught in the opponents' trap.
 
