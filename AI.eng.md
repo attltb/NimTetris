@@ -14,7 +14,7 @@ AIs can be implemented in a primitive way that examines numbers of cases as much
 
 There are many numbers of cases in Nim tetris, but a lot of them are equivalent in terms of the gameplay. For example, while the two board situations below look different, they are equivalent in terms of the gameplay: they contain only one playable area that can be completely filled only with one additional block.
 
-<p float="left"><img src="doc/AI/eq_1.png"><img src="doc/AI/eq_2.png"></p>
+<p float="left"><img src="doc/AI/eq_1.png"> <img src="doc/AI/eq_2.png"></p>
 
 This observation shows that the number of meaningful cases to consider may be far smaller than it seems. If we ignore the irrelevant details of the board and leave only *key informations* which matters in terms of the gameplay, the number of cases analysis would be done much more efficiently. It is what this document will refer to as Optimized Information Set, or shortly OIS.
 
@@ -22,15 +22,15 @@ OIS is defined as a set of sets of which elements are given by all possible next
 
 example 1 : A board on which no blocks can be placed corresponds to the empty set,  $ \emptyset $.
 
-<img align="left" src="doc\AI\0.png">
+<img align="left" src="doc\AI\0.png"><br clear="left"/>
 
 example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $ \emptyset $ is corresponds to the set with only one empty set as an element, $ \{ \emptyset \} $.
 
-<img align="left" src="doc\AI\1.png">
+<img align="left" src="doc\AI\1.png"><br clear="left"/>
 
 example 3 : A board on which OIS of the next state can be $ \emptyset $ or $ \{\emptyset\} $ depending on the player's choice of the block corresponds to $ \{\emptyset, \{\emptyset\}\} $.
 
-<img align="left" src="doc\AI\2.png">
+<img align="left" src="doc\AI\2.png"><br clear="left"/>
 
 This analysis reduces the number of cases to consider greatly. Number of cases on the board still need to checked to obtain OIS, but not all of them have to be checked now. For example, OIS of a board having only one playable area of 4-7 cells is clearly $\{\emptyset\}$ so that one doesn't have to check the cases of which put blocks on it.
 
@@ -40,11 +40,11 @@ The OIS-based analysis become much stronger when they are applied to boards whic
 
 ### 2) Calculating OIS of Separated Boards
 
-<img align="left" src="doc\AI\22.png">
+<img align="left" src="doc\AI\22.png"><br clear="left"/>
 
 The board in the picture is separated into two playable areas of 8 cells. What is the OIS of this board? One can find it by putting blocks in one by one, but there is a better way: to calculate OIS of the separated areas and calculating the OIS of the whole board using them.
 
-<p float="left"><img src="doc/AI/22l.png"><img src="doc/AI/22r.png"></p>
+<p float="left"><img src="doc/AI/22l.png"> <img src="doc/AI/22r.png"></p>
 
 In this case, both area have OIS of $ \{\emptyset, \{\emptyset\}\} $. What is the OIS of the whole board then? It is a set of which elements are all possible next-OIS after play. And in terms of OIS, there are only four possible plays in this situation.
 
