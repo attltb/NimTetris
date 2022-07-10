@@ -12,7 +12,7 @@ Nim tetris의 배포판에는 대결해 볼 수 있는 빠르고 강력한 AI들
 
 Nim tetris에는 많은 경우의 수가 있지만 그 중 상당수는 게임 플레이의 측면에서 보면 동등합니다. 가령, 아래의 두 보드 상황은 달라 보이지만 블록 하나로 완전히 채워질 수 있는 유효 영역 하나로 이루어져 있다는 건 마찬가지입니다.
 
-<p float="left"><img src="doc/AI/eq_1.png"><img src="doc/AI/eq_2.png"></p>
+<p float="left"><img src="doc/AI/eq_1.png"> <img src="doc/AI/eq_2.png"></p>
 
 이것은 게임에서 고려해야 할 유의미한 경우의 수는 보기보다 훨씬 적으며, 보드의 복잡한 세부 사항을 무시하고 실제 게임플레이에 중요한 핵심 정보만 남긴다면 경우의 수 분석을 훨씬 더 효율적으로 할 수 있다는 것을 말해 줍니다. 이 문서에서 최적화 정보 집합(OIS; Optimized Information Set) 이라고 부를 것이 바로 그것입니다.
 
@@ -20,15 +20,15 @@ OIS는 주어진 보드에 새로운 블록을 놓았을 때 만들어질 수 �
 
 사례1 : 그 어떠한 블록도 놓을 수 없는 상태는 공집합 $ \emptyset $ 에 대응됩니다. 
 
-<img align="left" src="doc\AI\0.png">
+<img align="left" src="doc\AI\0.png"><br clear="center">
 
 사례2 : 어디에 블록을 놓더라도 다음에 더 이상 블록을 놓을 수 없는 상태가 되는 상태는 공집합 하나만을 원소로 하는 집합, 즉 $ \{ \emptyset \} $에 대응됩니다.
 
-<img align="left" src="doc\AI\1.png">
+<img align="left" src="doc\AI\1.png"><br clear="center">
 
 사례3 : 플레이어의 선택에 따라 다음 상황의 OIS를 $ \emptyset $으로도, $ \{\emptyset\} $으로도 만들 수 있으며 그 외의 선택지가 없는 상태는 $ \{\emptyset, \{\emptyset\}\} $에 대응됩니다.
 
-<img align="left" src="doc\AI\2.png">
+<img align="left" src="doc\AI\2.png"><br clear="center">
 
 이러한 분석은 실질적으로 고려해야 할 게임의 경우의 수를 크게 줄여 줍니다. 보드에 대한 경우의 수 분석은 OIS를 얻는 과정에서 여전히 필요하지만 이를 위해 모든 경우의 수를 다 조사할 필요는 없기 때문입니다. 가령 4칸 이상 7칸 미만의 유효 영역은 무조건 {0}을 OIS로 가지며, 이는 굳이 일일히 블록을 넣어 보지 않아도 명확합니다.
 
@@ -42,7 +42,7 @@ OIS 기반 분석은 여러 개의 유효 영역으로 분할되어 있는 보�
 
 위 보드는 8칸짜리 유효 영역 두 개로 나뉘어져 있습니다. 이 보드의 OIS는 무엇입니까? 일일히 블록을 넣어 가며 확인해 볼 수도 있지만 더 좋은 방법이 있습니다. 분할된 두 유효 영역 각각의 OIS를 먼저 구하고 이를 이용해 전체 보드의 OIS를 구하는 것입니다.
 
-<p float="left"><img src="doc/AI/22l.png"><img src="doc/AI/22r.png"></p>
+<p float="left"><img src="doc/AI/22l.png"> <img src="doc/AI/22r.png"></p>
 
 이 경우 분할된 두 유효 영역의 OIS는 모두 $ \{\emptyset, \{\emptyset\}\} $로 밝혀집니다. 그렇다면 전체 보드의 OIS는 무엇입니까? 그것은 이 상황에서 플레이가 이루어진 후의 가능한 모든 다음 상황의 OIS를 원소로 하는 집합과 같습니다. 그리고 OIS의 측면에서 이 상황에서 가능한 플레이는 네 가지 뿐입니다.
 
