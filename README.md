@@ -1,6 +1,6 @@
 # Nim Tetris
 
-<img align="left" src="doc/title0.png" width="500px"><br clear="left"/>
+<img align="left" src="doc/title0.png"><br clear="left"/>
 
 Nim tetris is a [Nim](https://en.wikipedia.org/wiki/Nim)-like strategic board game that uses [tetrominoes](https://en.wikipedia.org/wiki/Tetromino).
 
