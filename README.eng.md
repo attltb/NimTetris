@@ -16,7 +16,7 @@ Nim tetris is a [Nim](https://en.wikipedia.org/wiki/Nim)-like strategic board ga
 
 Nim is a game played by placing a fixed number of stones (or matchsticks, etc.) across several rows, and then the two players take turns removing the stones. The following picture shows the initial placement of stones most commonly used, namely (1, 3, 5, 7).
 
-<img align="left" src="doc/NimGame.png">
+<img align="left" src="doc/NimGame.png"><br clear="left"/>
 
 Players must remove at least one stone at his turn. Removing multiple stones at once is allowed only if they come from the same row. For example, given the initial arrangement of stones as above, the first player to play can remove one stone from the second row or all 7 stones from the fourth row, but cannot remove one stone from each row.
 
