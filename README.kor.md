@@ -89,6 +89,6 @@ Q - 배경화면 바꾸기
 
 ## 기여자
 
-<p align="left"><a href="https://github.com/attltb"><img align="left" src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a> <a href="https://github.com/attltb">attltb</a> - 게임 디자인, AI 설계, 그래픽 디자인(~ver.0.1) 등 작업 전반</p><br clear="left"/>
+<p align="left"><a href="https://github.com/attltb"><img align="left" src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a> <a href="https://github.com/attltb">attltb</a> - 게임 디자인, AI 설계, 그래픽 디자인(~ver.0.1) 등 작업 전반</p><br clear="left"/><br>
 
 모든 종류의 기여는 환영합니다.
