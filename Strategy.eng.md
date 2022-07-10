@@ -27,11 +27,11 @@ Divide the board into two playable areas of 8 cells using I-blocks as shown belo
 
 The opponent can not win by any means now. If he uses all cells up in an area, you will be able to force him to put the last block by leaving 4 cells in the other area.
 
-<p float="left"><img src="doc/strategy/q1_2.png"><img src="doc/strategy/q1_3.png"></p>
+<p float="left"><img src="doc/strategy/q1_2.png"> <img src="doc/strategy/q1_3.png"></p>
 
 Conversely, if the opponent leaves 4 cells in an area, you will be able to force him to put the last block by using all cells up in the other area.
 
-<p float="left"><img src="doc/strategy/q1_4.png"><img src="doc/strategy/q1_5.png"></p>
+<p float="left"><img src="doc/strategy/q1_4.png"> <img src="doc/strategy/q1_5.png"></p>
 
 The point is that both areas can be filled with one or two blocks depending on the choice of the player who put the first block in them. This makes no matter what play the opponent makes in an area, you can counter it in the other area.
 
@@ -80,7 +80,7 @@ Just place the O-block in the center as shown below.
 
 Now, no matter where the opponent play, there will be 8 connected cells remain. You can win by using only 4 cells among the 8 so that the opponent have to fill the last. For example, see the following picture.
 
-<p float="left"><img src="doc/strategy/q3_3.png"><img src="doc/strategy/q3_4.png"></p>
+<p float="left"><img src="doc/strategy/q3_3.png"> <img src="doc/strategy/q3_4.png"></p>
 
 Centering is often useful as a way to prevent the separation of the board described above. For example, if there is a block floating in the middle of an area, it is impossible to split it by adding only one block.  
 
