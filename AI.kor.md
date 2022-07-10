@@ -20,15 +20,15 @@ OIS는 주어진 보드에 새로운 블록을 놓았을 때 만들어질 수 �
 
 사례1 : 그 어떠한 블록도 놓을 수 없는 상태는 공집합 $ \emptyset $ 에 대응됩니다. 
 
-<img align="left" src="doc\AI\0.png"><br clear="center"/>
+<img align="left" src="doc\AI\0.png"><br clear="left"/>
 
 사례2 : 어디에 블록을 놓더라도 다음에 더 이상 블록을 놓을 수 없는 상태가 되는 상태는 공집합 하나만을 원소로 하는 집합, 즉 $ \{ \emptyset \} $에 대응됩니다.
 
-<img align="left" src="doc\AI\1.png"><br clear="center"/>
+<img align="left" src="doc\AI\1.png"><br clear="left"/>
 
 사례3 : 플레이어의 선택에 따라 다음 상황의 OIS를 $ \emptyset $으로도, $ \{\emptyset\} $으로도 만들 수 있으며 그 외의 선택지가 없는 상태는 $ \{\emptyset, \{\emptyset\}\} $에 대응됩니다.
 
-<img align="left" src="doc\AI\2.png"><br clear="center"/>
+<img align="left" src="doc\AI\2.png"><br clear="left"/>
 
 이러한 분석은 실질적으로 고려해야 할 게임의 경우의 수를 크게 줄여 줍니다. 보드에 대한 경우의 수 분석은 OIS를 얻는 과정에서 여전히 필요하지만 이를 위해 모든 경우의 수를 다 조사할 필요는 없기 때문입니다. 가령 4칸 이상 7칸 미만의 유효 영역은 무조건 {0}을 OIS로 가지며, 이는 굳이 일일히 블록을 넣어 보지 않아도 명확합니다.
 
@@ -38,7 +38,7 @@ OIS 기반 분석은 여러 개의 유효 영역으로 분할되어 있는 보�
 
 ### 2) 분할된 보드의 OIS 계산
 
-<img align="left" src="doc\AI\22.png">
+<img align="left" src="doc\AI\22.png"><br clear="left"/>
 
 위 보드는 8칸짜리 유효 영역 두 개로 나뉘어져 있습니다. 이 보드의 OIS는 무엇입니까? 일일히 블록을 넣어 가며 확인해 볼 수도 있지만 더 좋은 방법이 있습니다. 분할된 두 유효 영역 각각의 OIS를 먼저 구하고 이를 이용해 전체 보드의 OIS를 구하는 것입니다.
 
