@@ -30,7 +30,9 @@ Nim tetris is played by two players taking turns placing [tetrominos](https://en
 
 <p align="left"><img src="doc/NimTetrisGame_0.png"></p>
 
-Note that not all places on the board have to be filled to satisfy the end of game conditions. It's clear that the emply place in the upper right corner of the picture will not be filled until the game is over. For convenience, the game may mark thoses places where no blocks can be placed so that they can be considered filled with the mark instead of blocks. In this case, the game ends when all places on the board are filled with blocks or the mark.
+Note that not all places on the board have to be filled to satisfy the end of game conditions. It's clear that the emply place in the upper right corner of the picture will not be filled until the game is over. 
+
+For convenience, the game may mark thoses places where no blocks can be placed so that they can be considered filled with the mark instead of blocks. In this case, the game ends when all places on the board are filled with blocks or the mark.
 
 <p align="left"><img src="doc/NimTetrisGame_1.png"></p>
 
