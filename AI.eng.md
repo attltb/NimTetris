@@ -22,15 +22,15 @@ OIS is defined as a set of sets of which elements are given by all possible next
 
 example 1 : A board on which no blocks can be placed corresponds to the empty set, 0.
 
-<p><img align="left" src="doc\AI\0.png"></p>
+<p float="left"><img align="left" src="doc\AI\0.png"></p>
 
 example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become 0 is corresponds to the set with only one empty set as an element, {0}.
 
-<p><img align="left" src="doc\AI\1.png"></p>
+<p float="left"><img align="left" src="doc\AI\1.png"></p>
 
 example 3 : A board on which OIS of the next state can be 0 or {0}  depending on the player's choice of the block corresponds to {0, {0}}.
 
-<p><img align="left" src="doc\AI\2.png"></p>
+<p float="left"><img align="left" src="doc\AI\2.png"></p>
 
 This analysis reduces the number of cases to consider greatly. Number of cases on the board still need to checked to obtain OIS, but not all of them have to be checked now. For example, OIS of a board having only one playable area of 4-7 cells is clearly {0} so that one doesn't have to check the cases of which put blocks on it.
 
@@ -40,7 +40,7 @@ The OIS-based analysis become much stronger when they are applied to boards whic
 
 ### 2) Calculating OIS of Separated Boards
 
-<p><img align="left" src="doc\AI\22.png"></p>
+<p float="left"><img align="left" src="doc\AI\22.png"></p>
 
 The board in the picture is separated into two playable areas of 8 cells. What is the OIS of this board? One can find it by putting blocks in one by one, but there is a better way: to calculate OIS of the separated areas and calculating the OIS of the whole board using them.
 
