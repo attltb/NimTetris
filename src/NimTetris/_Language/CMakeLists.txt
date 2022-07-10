@@ -1,0 +1,5 @@
+if(${NT_LANGUAGE} MATCHES "Korean")
+	ADD_SUBDIRECTORY (Korean)
+elseif(${NT_LANGUAGE} MATCHES "English")
+	ADD_SUBDIRECTORY (English)
+endif() 

@@ -1,0 +1,5 @@
+if(WIN32)
+	ADD_SUBDIRECTORY (Windows)
+else() 
+	MESSAGE (FATAL_ERROR "No implementation found for your OS!")
+endif()

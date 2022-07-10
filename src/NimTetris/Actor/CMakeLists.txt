@@ -1,0 +1,19 @@
+TARGET_SOURCES (${ProjectName}
+	PRIVATE
+	NimTBackground.cpp
+	NimTBackground.hpp
+	NimTBoard.cpp
+	NimTBoard.hpp
+	NimTBoardFrame.cpp
+	NimTBoardFrame.hpp
+	NimTBoardOverAnim.cpp
+	NimTBoardOverAnim.hpp
+	NimTBlock.cpp
+	NimTBlock.hpp
+	NimTDisabledMark.cpp
+	NimTDisabledMark.hpp
+	NimTPlayer.cpp
+	NimTPlayer.hpp
+	NimTPlayer_AI.hpp
+	NimTPlayer_User.hpp
+)

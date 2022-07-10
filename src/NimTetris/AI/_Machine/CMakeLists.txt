@@ -1,0 +1,7 @@
+if(${CMAKE_SIZEOF_VOID_P} EQUAL 8)
+	ADD_SUBDIRECTORY (x64)
+elseif(${CMAKE_SIZEOF_VOID_P} EQUAL 4)
+	ADD_SUBDIRECTORY (x86)
+else() 
+	MESSAGE (FATAL_ERROR "No implementation found for your Platform!")
+endif() 
