@@ -44,7 +44,7 @@ Nim tetris is similar to the Nim in many respects but its two-dimensional elemen
 
 Mouse/Arrow- move cursur block
 
-A - change cursur block (Z $\rightarrow$  S $\rightarrow$  T $\rightarrow$ J $\rightarrow$ L $\rightarrow$ O $\rightarrow$ I $\rightarrow$ Z)
+A - change cursur block (Z $\rightarrow $ S $\rightarrow $  T $\rightarrow$ J $\rightarrow$ L $\rightarrow$ O $\rightarrow$ I $\rightarrow$ Z)
 
 S - rotate cursur block
 
