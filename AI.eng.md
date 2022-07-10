@@ -20,19 +20,19 @@ This observation shows that the number of meaningful cases to consider may be fa
 
 OIS is defined as a set of sets of which elements are given by all possible next-OIS, that is, OIS of the next board can be created when a new block is placed on the given board. The list below shows some examples.
 
-example 1 : A board on which no blocks can be placed corresponds to the empty set,  $\emptyset $.
+example 1 : A board on which no blocks can be placed corresponds to the empty set, 0.
 
-<img align="left" src="doc\AI\0.png"><br clear="left"/>
+<p><img align="left" src="doc\AI\0.png"></p>
 
-example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $\emptyset $ is corresponds to the set with only one empty set as an element,  $ \{ \emptyset \} $.
+example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become 0 is corresponds to the set with only one empty set as an element, {0}.
 
-<img align="left" src="doc\AI\1.png"><br clear="left"/>
+<p><img align="left" src="doc\AI\1.png"></p>
 
-example 3 : A board on which OIS of the next state can be $ \emptyset $ or $ \{\emptyset\} $ depending on the player's choice of the block corresponds to $\{\emptyset, \{\emptyset\}\} $.
+example 3 : A board on which OIS of the next state can be 0 or {0}  depending on the player's choice of the block corresponds to {0, {0}}.
 
-<img align="left" src="doc\AI\2.png"><br clear="left"/>
+<p><img align="left" src="doc\AI\2.png"></p>
 
-This analysis reduces the number of cases to consider greatly. Number of cases on the board still need to checked to obtain OIS, but not all of them have to be checked now. For example, OIS of a board having only one playable area of 4-7 cells is clearly $\{\emptyset\}$ so that one doesn't have to check the cases of which put blocks on it.
+This analysis reduces the number of cases to consider greatly. Number of cases on the board still need to checked to obtain OIS, but not all of them have to be checked now. For example, OIS of a board having only one playable area of 4-7 cells is clearly {0} so that one doesn't have to check the cases of which put blocks on it.
 
 The OIS-based analysis become much stronger when they are applied to boards which are separated with multiple playable areas. How to calculate the OIS of a separated board will be dealt in the next section.
 
@@ -40,47 +40,47 @@ The OIS-based analysis become much stronger when they are applied to boards whic
 
 ### 2) Calculating OIS of Separated Boards
 
-<img align="left" src="doc\AI\22.png"><br clear="left"/>
+<p><img align="left" src="doc\AI\22.png"></p>
 
 The board in the picture is separated into two playable areas of 8 cells. What is the OIS of this board? One can find it by putting blocks in one by one, but there is a better way: to calculate OIS of the separated areas and calculating the OIS of the whole board using them.
 
 <p float="left"><img src="doc/AI/22l.png"> <img src="doc/AI/22r.png"></p>
 
-In this case, both area have OIS of $\{\emptyset, \{\emptyset\}\} $. What is the OIS of the whole board then? It is a set of which elements are all possible next-OIS after play. And in terms of OIS, there are only four possible plays in this situation.
+In this case, both area have OIS of {0, {0}}. What is the OIS of the whole board then? It is a set of which elements are all possible next-OIS after play. And in terms of OIS, there are only four possible plays in this situation.
 
-1.	Change the OIS of the left area to $ \emptyset $.
-2.	Change the OIS of the left area to $ \{\emptyset\} $.
-3.	Change the OIS of the right area to $ \emptyset $.
-4.	Change the OIS of the right area to $ \{\emptyset\} $.
+1.	Change the OIS of the left area to 0.
+2.	Change the OIS of the left area to {0}.
+3.	Change the OIS of the right area to 0.
+4.	Change the OIS of the right area to {0}.
 
 It's also clear that there is no difference between the first and third options in terms of OIS. The second and fourth options are also equivalent. After combining the equivalents, following two options are obtained.
 
-1. Change the OIS of the an area to $ \emptyset $.
-2. Change the OIS of the an area to $ \{\emptyset\} $.
+1. Change the OIS of the an area to 0.
+2. Change the OIS of the an area to {0}.
 
-OIS of the board would have the the next-OIS obtained in each case as its element. Let us denote OIS of a board consist of an area of which OIS is $ X $ and an area of which OIS is  $ Y $ as $ X\times Y $. The first option give the next-OIS of $ \emptyset\times \{\emptyset,  \{\emptyset\}\} $, while the second one give $ \{\emptyset\}\times \{\emptyset,  \{\emptyset\}\} $. The following expression holds.
+OIS of the board would have the the next-OIS obtained in each case as its element. Let us denote OIS of a board consist of an area of which OIS is X and an area of which OIS is Y as  X\times Y . The first option give the next-OIS of  0 × {0,  {0}}, while the second one give  {0}\times {0,  {0}} . The following expression holds.
 
-$  \{\emptyset,  \{\emptyset\}\}\times \{\emptyset,  \{\emptyset\}\} =  \{\emptyset\times \{\emptyset,  \{\emptyset\}\},  \{\emptyset\}\times \{\emptyset,  \{\emptyset\}\}\}. $
+  {0,  {0}}\times {0,  {0}} =  {0\times {0,  {0}},  {0}\times {0,  {0}}}. 
 
-Since blocks cannot be placed in an area of which OIS is $ \emptyset $, they have no effect on the number of cases in the game whatsoever and $ \emptyset\times X $ always equals $ X $. The first element $ \emptyset\times \{\emptyset,  \{\emptyset\}\} $ is just $ \{\emptyset,  \{\emptyset\}\} $.
+Since blocks cannot be placed in an area of which OIS is  0 , they have no effect on the number of cases in the game whatsoever and  0\times X  always equals  X . The first element  0\times {0,  {0}}  is just  {0,  {0}} .
 
-How to calculate the second element, $ \{\emptyset\}\times \{\emptyset,  \{\emptyset\}\} $? Just repeat the method applied previously. In this case, there are only three possible plays.
+How to calculate the second element,  {0}\times {0,  {0}} ? Just repeat the method applied previously. In this case, there are only three possible plays.
 
-1. Change OIS of the area of which OIS is $ \{\emptyset\} $ to $ \emptyset $.
-2. Change OIS of the area of which OIS is $ \{\emptyset,  \{\emptyset\}\} $ to $ \emptyset $.
-3. Change OIS of the area of which OIS is $ \{\emptyset,  \{\emptyset\}\} $ to $ \{\emptyset\} $.
+1. Change OIS of the area of which OIS is  {0}  to  0 .
+2. Change OIS of the area of which OIS is  {0,  {0}}  to  0 .
+3. Change OIS of the area of which OIS is  {0,  {0}}  to  {0} .
 
-The first option makes the next-OIS to $ \{\emptyset,  \{\emptyset\}\} $ and the secone one makes it to $\{\emptyset\} $. The thirs one makes the next-OIS to $ \{\emptyset\}\times \{\emptyset\} $ and it turns out to be $ \{ \{\emptyset\}\} $. We just shown that
+The first option makes the next-OIS to  {0,  {0}}  and the secone one makes it to {0} . The thirs one makes the next-OIS to  {0}\times {0}  and it turns out to be  { {0}} . We just shown that
 
-$  \{\emptyset\}\times \{\emptyset,  \{\emptyset\}\} =  \{ \{\emptyset,  \{\emptyset\}\},  \{\emptyset\},  \{ \{\emptyset\}\}\}, $
+  {0}\times {0,  {0}} =  { {0,  {0}},  {0},  { {0}}}, 
 
 therefore,
 
-$ \{\emptyset,  \{\emptyset\}\}\times \{\emptyset,  \{\emptyset\}\} =  \{ \{\emptyset,  \{\emptyset\}\},  \{ \{\emptyset,  \{\emptyset\}\},  \{\emptyset\},  \{ \{\emptyset\}\}\}\}. $
+ {0,  {0}}\times {0,  {0}} =  { {0,  {0}},  { {0,  {0}},  {0},  { {0}}}}. 
 
-This logic is applicable even when the OIS is very large. In general, for $ X =  \{x_1, x_2 \cdots x_n\} $ and $ Y =  \{y_1, y_2 \cdots y_m\} $, folloing expressions holds.
+This logic is applicable even when the OIS is very large. In general, for  X =  {x_1, x_2 \cdots x_n}  and  Y =  {y_1, y_2 \cdots y_m} , folloing expressions holds.
 
-$ X\times Y =  \{x_1\times Y, x_2\times Y \cdots x_n\times Y, X\times y_1, X\times y_2 \cdots X\times y_m\}. $
+ X\times Y =  {x_1\times Y, x_2\times Y \cdots x_n\times Y, X\times y_1, X\times y_2 \cdots X\times y_m}. 
 
 The calculation, of course, requires recursive work. If the depth of the two operand OIS is very deep, it is likely to take quite a long time to compute. Thankfully in Nim tetris, same OIS tends to appear over and over again.
 
@@ -94,21 +94,21 @@ If a board can be analyzed via its OIS, how can it tell us which player are winn
 
 It's simple. Just think that the two players are playing not Nim tetris, but some imaginary game which is only based on OIS, where the two players taking turns choosing an element of the OIS and replacing it with the chosen. The game ends when the OIS become the empty set, and the one who played last lose. 
 
-Since $ \{\emptyset\} $ only has empty set as an element, the first player to play when OIS is $ \{\emptyset\} $ always lose. If `is_winable` is a function returning whether the first player can win with given OIS, the following holds.
+Since  {0}  only has empty set as an element, the first player to play when OIS is  {0}  always lose. If `is_winable` is a function returning whether the first player can win with given OIS, the following holds.
 
 ```
 is_winable('{0}') == false
 ```
 
-In contrast, if the given OIS has $ \{\emptyset\} $ as an element, the first player can always win by choosing $ \{\emptyset\} $. For example, the following holds.
+In contrast, if the given OIS has  {0}  as an element, the first player can always win by choosing  {0} . For example, the following holds.
 
 ```
 is_winable('{{0}, 0}') == true
 ```
 
-This rule can be generalized easily. In general, when $ A $ is an OIS, if there is at least one element $a$ of `A` which satisfies `is_winable(a) == false`, `is_winable(A)` is `true` and choosing `a` is the best play for the first player to win.
+This rule can be generalized easily. In general, when  A  is an OIS, if there is at least one element a of `A` which satisfies `is_winable(a) == false`, `is_winable(A)` is `true` and choosing `a` is the best play for the first player to win.
 
-What if there are no element `a` satisfying `is_winable(a) == false`? It means that no matter what first player choose, the opponent can always counter it and secure the win. Therefore, `is_winable(A)` is `false`. The only exception is $\emptyset$. It does not have any element, but it only means that the previous player made the last play and lose. Therefore, the first player wins by default.
+What if there are no element `a` satisfying `is_winable(a) == false`? It means that no matter what first player choose, the opponent can always counter it and secure the win. Therefore, `is_winable(A)` is `false`. The only exception is 0. It does not have any element, but it only means that the previous player made the last play and lose. Therefore, the first player wins by default.
 
 ```
 is_winable('0') == true
