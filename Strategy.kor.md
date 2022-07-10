@@ -27,11 +27,11 @@ Nim tetris에는 알아 두기만 해도 승률을 크게 끌어올릴 수 있�
 
 이제 후공은 어떻게 해도 이길 수 없습니다. 후공이 두 영역 중 하나의 남아있는 빈 공간을 모두 채우면 선공은 다른 한 쪽에서 4칸을 채움으로써 후공이 마지막 블록을 놓을 수밖에 없도록 강제할 것입니다.
 
-<p float="left"><img src="doc/strategy/q1_2.png"><img src="doc/strategy/q1_3.png"></p>
+<p float="left"><img src="doc/strategy/q1_2.png"> <img src="doc/strategy/q1_3.png"></p>
 
 후공이 두 영역 중 한쪽 영역에서 4칸만 채우면 선공은 다른 한 쪽의 8칸을 모두 채움으로써 후공이 마지막 블록을 놓을 수밖에 없도록 강제할 것입니다.
 
-<p float="left"><img src="doc/strategy/q1_4.png"><img src="doc/strategy/q1_5.png"></p>
+<p float="left"><img src="doc/strategy/q1_4.png"> <img src="doc/strategy/q1_5.png"></p>
 
 핵심은 두 영역이 모두 블록 하나 또는 두 개로 완전히 채워질 수 있다는 것입니다. 이것이 후공이 한 쪽 영역에서 어떤 플레이를 하더라도 선공이 다른 한 쪽 영역에서 그것에 반대되는 플레이를 통해 후공이 마지막 블록을 놓을 수밖에 없게끔 할 수 있게 합니다.
 
