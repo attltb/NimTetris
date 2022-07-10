@@ -8,6 +8,6 @@ Nim tetris is a [Nim](https://en.wikipedia.org/wiki/Nim)-like strategic board ga
 
 ## README Editions
 
-- [한국어](README.kor.md)
 - [English](README.eng.md)
+- [한국어](README.kor.md)
 

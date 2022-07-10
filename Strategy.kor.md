@@ -14,7 +14,7 @@ Nim tetris에는 알아 두기만 해도 승률을 크게 끌어올릴 수 있�
 
 ### 1) 사례 1: (2, 2) 분할
 
-<img align="left" src="doc/strategy/q1_0.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q1_0.png"></p>
 
 블록을 놓을 수 있는 자리가 20칸이나 남아 있는 위 보드 상황에서 단번에 승리하는 길을 찾는 것은 어려워 보입니다. 그러나 선공은 확실하게 승리할 수 있는 쉽고 간단한 길이 하나 존재합니다. 스스로 문제를 풀어 보려면 답을 찾을 때까지 아래의 접힌 영역을 열지 마십시오. 
 
@@ -23,27 +23,27 @@ Nim tetris에는 알아 두기만 해도 승률을 크게 끌어올릴 수 있�
 
 아래와 같이 I블록을 이용하여 보드를 두 개의 8칸짜리 유효 영역으로 쪼개면 됩니다.
 
-<img align="left" src="doc/strategy/q1_1.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q1_1.png"></p>
 
 이제 후공은 어떻게 해도 이길 수 없습니다. 후공이 두 영역 중 하나의 남아있는 빈 공간을 모두 채우면 선공은 다른 한 쪽에서 4칸을 채움으로써 후공이 마지막 블록을 놓을 수밖에 없도록 강제할 것입니다.
 
-<p float="left"><img src="doc/strategy/q1_2.png"> <img src="doc/strategy/q1_3.png"></p>
+<p align="left"><img src="doc/strategy/q1_2.png"> <img src="doc/strategy/q1_3.png"></p>
 
 후공이 두 영역 중 한쪽 영역에서 4칸만 채우면 선공은 다른 한 쪽의 8칸을 모두 채움으로써 후공이 마지막 블록을 놓을 수밖에 없도록 강제할 것입니다.
 
-<p float="left"><img src="doc/strategy/q1_4.png"> <img src="doc/strategy/q1_5.png"></p>
+<p align="left"><img src="doc/strategy/q1_4.png"> <img src="doc/strategy/q1_5.png"></p>
 
 핵심은 두 영역이 모두 블록 하나 또는 두 개로 완전히 채워질 수 있다는 것입니다. 이것이 후공이 한 쪽 영역에서 어떤 플레이를 하더라도 선공이 다른 한 쪽 영역에서 그것에 반대되는 플레이를 통해 후공이 마지막 블록을 놓을 수밖에 없게끔 할 수 있게 합니다.
 
 이러한 승리 공식은 Nim tetris의 모티브가 된 원본 Nim게임의 (2, 2) 승리 공식과도 여러모로 유사합니다. Nim에서는 상대방에게 아래와 같이 (2, 2)개의 돌을 남겨주면 승리가 확정됩니다.
 
-<img align="left" img src="doc/strategy/q1_6.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q1_6.png"></p>
 
 상대가 첫 번째 줄에서 한 개의 돌을 제거한다면 당신은 두 번째 줄의 돌 전부를 제거함으로써 상대가 마지막 돌을 제거할 수밖에 없게끔 강제할 수 있습니다. 상대가 첫 번째 줄의 돌 전부를 제거한다면 당신은 두 번째 줄에서 돌 하나만을 제거함으로써 상대가 마지막 돌을 제거할 수밖에 없게끔 강제할 수 있을 것입니다. 상대가 두 번째 줄에서 돌을 가져가도 마찬가지입니다.
 
 Nim에서와 달리 Nim tetris에서는 동등 분할이 항상 승리를 보장하지는 않으므로 주의하십시오. 다음 분할은 똑같이 보드를 같은 영역 두 개로 나누지만 분할자가 승리하지는 않습니다.
 
-<img align="left" img src="doc/strategy/q1_7.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q1_7.png"></p>
 
 이 경우 각 영역을 블록 하나만으로 모두 사용하는 방법은 존재하지 않으며, 오직 블록 두 개를 이용하는 방법만 존재합니다. 이렇게 보드를 분할한다면 오히려 분할자가 지게 됩니다.
 
@@ -57,7 +57,7 @@ Nim에서와 달리 Nim tetris에서는 동등 분할이 항상 승리를 보장
 
 Nim tetris에는 (2, 2)외에도 다양한 분할 기반의 승리 공식들이 존재합니다. 다음 그림은 실전에도 자주 나오는 그 공식 중 한 가지를 보여줍니다. 아래와 같이 보드가 분할되어 있다면 선공은 어떻게 해도 이길 수 없습니다.
 
-<img align="left" img src="doc/strategy/q2.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q2.png"></p>
 
 왜 선공이 이길 수 없는지, 선공의 가능한 각 플레이에 대해 후공은 어떻게 대응해야 이길 수 있는지는 스스로 확인해 보십시오.
 
@@ -69,7 +69,7 @@ Nim tetris에는 (2, 2)외에도 다양한 분할 기반의 승리 공식들이 
 
 ### 1) 사례 1: 가운데 놓기를 통한 분할 방어
 
-<img align="left" img src="doc/strategy/q3_1.png"><br clear="left"/>
+<p align="left"><img align="left" img src="doc/strategy/q3_1.png"></p>
 
 선공은 다른 어떤 플레이를 해도 집니다. 이기는 방법은 단 한 가지 뿐입니다. 그 방법은 무엇입니까? 아래의 접힌 영역은 그 답을 보여줍니다.
 
@@ -78,19 +78,19 @@ Nim tetris에는 (2, 2)외에도 다양한 분할 기반의 승리 공식들이 
 <summary>정답 보기</summary>
 아래와 같이 가운데에 O블록을 놓으면 됩니다.
 
-<img align="left" img src="doc/strategy/q3_2.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q3_2.png"></p>
 
 이제 후공이 어디에 어떻게 블록을 채우든 길게 이어진 8개의 칸이 남게 되며, 따라서 선공은 무효 영역을 만들지 않고 남은 8개의 칸 중 4개의 칸만을 사용함으로써 마지막 블록을 후공이 놓을 수밖에 없게 강제할 수 있습니다. 가령, 다음 그림을 참조하십시오.
 
-<p float="left"><img src="doc/strategy/q3_3.png"> <img src="doc/strategy/q3_4.png"></p>
+<p align="left"><img src="doc/strategy/q3_3.png"> <img src="doc/strategy/q3_4.png"></p>
 
 일반적인 상황에서 가운데 놓기는 앞서 설명한 보드 분할을 적극적으로 방어하는 전략으로써 사용되는 경우가 많습니다. 가령, 아래와 같이 가운데에 떠 있는 블록이 있다면 보드를 블록 하나만을 추가하여 크게 분할하는 것은 불가능합니다.
 
-<img align="left" img src="doc/strategy/q4_1.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q4_1.png"></p>
 
 블록 두 개를 추가한다면 보드를 분할할 수 있으나, 이는 이 상황에서 한 플레이어가 함부로 분할을 시도할 경우 오히려 상대가 자신이 원하는 형태로 보드를 분할할 권리를 갖게 된다는 것을 의미합니다. 이것은 대부분의 경우 상대에게 유리한 결과로 이어집니다.
 
-<img align="left" img src="doc/strategy/q4_2.png"><br clear="left"/>
+<p align="left"><img src="doc/strategy/q4_2.png"></p>
 
 섣불리 분할을 시도한 결과 상대의 반격으로 앞에서 설명한 (2, 2)와 같은 상황이 만들어졌습니다. 상대의 노림수에 제대로 걸려든 모습입니다.
 

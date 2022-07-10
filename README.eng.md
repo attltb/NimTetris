@@ -91,8 +91,6 @@ If you just run the built binary you will get an error saying that the file 'Nim
 
 ## Contributors
 
-<a href="https://github.com/attltb"><img src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a>
-
-<a href="https://github.com/attltb">attltb</a> - game design and programming, AI design and programming, graphic design(~ver.0.1), etcs.
+<p align="left"><a href="https://github.com/attltb"><img align="left" src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a> <a href="https://github.com/attltb">attltb</a> - game design and programming, AI design and programming, graphic design(~ver.0.1), etcs.</p><br clear="left"/><br>
 
 Contributions of any kind welcome.

@@ -14,7 +14,7 @@ AIs can be implemented in a primitive way that examines numbers of cases as much
 
 There are many numbers of cases in Nim tetris, but a lot of them are equivalent in terms of the gameplay. For example, while the two board situations below look different, they are equivalent in terms of the gameplay: they contain only one playable area that can be completely filled only with one additional block.
 
-<p float="left"><img src="doc/AI/eq_1.png"> <img src="doc/AI/eq_2.png"></p>
+<p align="left"><img src="doc/AI/eq_1.png"> <img src="doc/AI/eq_2.png"></p>
 
 This observation shows that the number of meaningful cases to consider may be far smaller than it seems. If we ignore the irrelevant details of the board and leave only *key informations* which matters in terms of the gameplay, the number of cases analysis would be done much more efficiently. It is what this document will refer to as Optimized Information Set, or shortly OIS.
 
@@ -22,15 +22,15 @@ OIS is defined as a set of sets of which elements are given by all possible next
 
 example 1 : A board on which no blocks can be placed corresponds to the empty set, 0.
 
-<p float="left"><img src="doc\AI\0.png"></p>
+<p align="left"><img src="doc\AI\0.png"></p>
 
 example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become 0 is corresponds to the set with only one empty set as an element, {0}.
 
-<p float="left"><img align="left" src="doc\AI\1.png"></p>
+<p align="left"><img src="doc\AI\1.png"></p>
 
 example 3 : A board on which OIS of the next state can be 0 or {0}  depending on the player's choice of the block corresponds to {0, {0}}.
 
-<p float="left"><img align="left" src="doc\AI\2.png"></p>
+<p align="left"><img src="doc\AI\2.png"></p>
 
 This analysis reduces the number of cases to consider greatly. Number of cases on the board still need to checked to obtain OIS, but not all of them have to be checked now. For example, OIS of a board having only one playable area of 4-7 cells is clearly {0} so that one doesn't have to check the cases of which put blocks on it.
 
@@ -40,11 +40,11 @@ The OIS-based analysis become much stronger when they are applied to boards whic
 
 ### 2) Calculating OIS of Separated Boards
 
-<p float="left"><img align="left" src="doc\AI\22.png"></p>
+<p align="left"><img src="doc\AI\22.png"></p>
 
 The board in the picture is separated into two playable areas of 8 cells. What is the OIS of this board? One can find it by putting blocks in one by one, but there is a better way: to calculate OIS of the separated areas and calculating the OIS of the whole board using them.
 
-<p float="left"><img src="doc/AI/22l.png"> <img src="doc/AI/22r.png"></p>
+<p align="left"><img src="doc/AI/22l.png"> <img src="doc/AI/22r.png"></p>
 
 In this case, both area have OIS of {0, {0}}. What is the OIS of the whole board then? It is a set of which elements are all possible next-OIS after play. And in terms of OIS, there are only four possible plays in this situation.
 
@@ -58,29 +58,29 @@ It's also clear that there is no difference between the first and third options 
 1. Change the OIS of the an area to 0.
 2. Change the OIS of the an area to {0}.
 
-OIS of the board would have the the next-OIS obtained in each case as its element. Let us denote OIS of a board consist of an area of which OIS is X and an area of which OIS is Y as  X\times Y . The first option give the next-OIS of  0 × {0,  {0}}, while the second one give  {0}\times {0,  {0}} . The following expression holds.
+OIS of the board would have the the next-OIS obtained in each case as its element. Let us denote OIS of a board consist of an area of which OIS is X and an area of which OIS is Y as X × Y. The first option give the next-OIS of 0 × {0, {0}}, while the second one give {0} × {0, {0}}. The following expression holds.
 
-  {0,  {0}}\times {0,  {0}} =  {0\times {0,  {0}},  {0}\times {0,  {0}}}. 
+   {0, {0}} × {0, {0}} = {0 × {0, {0}}, {0} × {0, {0}}}.
 
-Since blocks cannot be placed in an area of which OIS is  0 , they have no effect on the number of cases in the game whatsoever and  0\times X  always equals  X . The first element  0\times {0,  {0}}  is just  {0,  {0}} .
+Since blocks cannot be placed in an area of which OIS is  0 , they have no effect on the number of cases in the game whatsoever and 0 × X always equals  X. The first element 0 × {0,  {0}} is just {0,  {0}}.
 
-How to calculate the second element,  {0}\times {0,  {0}} ? Just repeat the method applied previously. In this case, there are only three possible plays.
+How to calculate the second element,  {0} × {0,  {0}}? Just repeat the method applied previously. In this case, there are only three possible plays.
 
-1. Change OIS of the area of which OIS is  {0}  to  0 .
-2. Change OIS of the area of which OIS is  {0,  {0}}  to  0 .
-3. Change OIS of the area of which OIS is  {0,  {0}}  to  {0} .
+1. Change OIS of the area of which OIS is {0} to 0.
+2. Change OIS of the area of which OIS is {0, {0}} to 0.
+3. Change OIS of the area of which OIS is {0, {0}} to {0}.
 
-The first option makes the next-OIS to  {0,  {0}}  and the secone one makes it to {0} . The thirs one makes the next-OIS to  {0}\times {0}  and it turns out to be  { {0}} . We just shown that
+The first option makes the next-OIS to {0, {0}} and the secone one makes it to {0}. The thirs one makes the next-OIS to {0} × {0} and it turns out to be {{0}}. We just shown that
 
-  {0}\times {0,  {0}} =  { {0,  {0}},  {0},  { {0}}}, 
+   {0} × {0, {0}} = {{0, {0}}, {0}, {{0}}}, 
 
 therefore,
 
- {0,  {0}}\times {0,  {0}} =  { {0,  {0}},  { {0,  {0}},  {0},  { {0}}}}. 
+   {0, {0}} × {0, {0}} = {{0, {0}}, {{0, {0}}, {0}, {{0}}}}. 
 
-This logic is applicable even when the OIS is very large. In general, for  X =  {x_1, x_2 \cdots x_n}  and  Y =  {y_1, y_2 \cdots y_m} , folloing expressions holds.
+This logic is applicable even when the operends are very deep. In general, for X = {x1, x2 ...xn} and Y = {y1, y2 ...ym}, folloing expressions holds.
 
- X\times Y =  {x_1\times Y, x_2\times Y \cdots x_n\times Y, X\times y_1, X\times y_2 \cdots X\times y_m}. 
+   X × Y =  {x1 × Y, x2 × Y ...xn × Y, X × y1, X × y2 ...X × ym}. 
 
 The calculation, of course, requires recursive work. If the depth of the two operand OIS is very deep, it is likely to take quite a long time to compute. Thankfully in Nim tetris, same OIS tends to appear over and over again.
 
@@ -94,7 +94,7 @@ If a board can be analyzed via its OIS, how can it tell us which player are winn
 
 It's simple. Just think that the two players are playing not Nim tetris, but some imaginary game which is only based on OIS, where the two players taking turns choosing an element of the OIS and replacing it with the chosen. The game ends when the OIS become the empty set, and the one who played last lose. 
 
-Since  {0}  only has empty set as an element, the first player to play when OIS is  {0}  always lose. If `is_winable` is a function returning whether the first player can win with given OIS, the following holds.
+Since  {0}  only has empty set as an element, the first player to play when OIS is {0} always lose. If `is_winable` is a function returning whether the first player can win with given OIS, the following holds.
 
 ```
 is_winable('{0}') == false
@@ -126,7 +126,7 @@ Built-in AIs in the Nim Tetris distributions has various OIS-based optimizations
 
 Although OIS-based analysis reduces the number of practical cases to consider greatly, one still have to check a lot of cases on board to obtain OIS of each playable areas. It still takes quite a long to find OIS by putting blocks in playable areas one by one.
 
-Built-in AIs solve this problem through bit-compression. Each cells on the board can have two logical state: filled(1) or not filled(0). By storing state of each cells in only 1 bit, one can store the logical state of the whole board only using 100 bits, which is smaller than 16 byte.
+Built-in AIs solve this problem through bit-compression. Each cells on the board can have two logical state: *filled(1)* or *not filled(0)*. By storing state of each cells in only 1 bit, one can store the logical state of the whole board only using 100 bits, which is smaller than 16 byte.
 
 Why use bit-compression? Because it makes the analysis on the board much faster. There are roughly 3 reasons. 
 
