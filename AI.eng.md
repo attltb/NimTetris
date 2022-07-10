@@ -20,11 +20,11 @@ This observation shows that the number of meaningful cases to consider may be fa
 
 OIS is defined as a set of sets of which elements are given by all possible next-OIS, that is, OIS of the next board can be created when a new block is placed on the given board. The list below shows some examples.
 
-example 1 : A board on which no blocks can be placed corresponds to the empty set,  $\emptyset $.
+example 1 : A board on which no blocks can be placed corresponds to the empty set, $\emptyset $.
 
 <img align="left" src="doc\AI\0.png"><br clear="left"/>
 
-example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $\emptyset $ is corresponds to the set with only one empty set as an element, $\{\emptyset\} $.
+example 2 : A board on which no matter where the next block is placed, no more blocks can be placed on the board so that OIS become $\emptyset $ is corresponds to the set with only one empty set as an element,  $ \{ \emptyset \} $.
 
 <img align="left" src="doc\AI\1.png"><br clear="left"/>
 
