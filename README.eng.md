@@ -1,6 +1,6 @@
 # Nim Tetris (ENG)
 
-<img align="left" src="doc/title1.png"><br clear="left"/>
+<p align="left"><img src="doc/title1.png"></p>
 
 
 
@@ -16,7 +16,7 @@ Nim tetris is a [Nim](https://en.wikipedia.org/wiki/Nim)-like strategic board ga
 
 Nim is a game played by placing a fixed number of stones (or matchsticks, etc.) across several rows, and then the two players take turns removing the stones. The following picture shows the initial placement of stones most commonly used, namely (1, 3, 5, 7).
 
-<img align="left" src="doc/NimGame.png"><br clear="left"/>
+<p align="left"><img src="doc/NimGame.png"></p>
 
 Players must remove at least one stone at his turn. Removing multiple stones at once is allowed only if they come from the same row. For example, given the initial arrangement of stones as above, the first player to play can remove one stone from the second row or all 7 stones from the fourth row, but cannot remove one stone from each row.
 
@@ -28,11 +28,11 @@ The game ends when all stones in the board are removed, and the one removed the 
 
 Nim tetris is played by two players taking turns placing [tetrominos](https://en.wikipedia.org/wiki/Tetromino) on a 10x10 board. Blocks can be placed anywhere on the board, but cannot be overlapped. The game ends when there are no more places to put blocks on the board, and the one put the last block loses.
 
-<img align="left" src="doc/NimTetrisGame_0.png"><br clear="left"/>
+<p align="left"><img src="doc/NimTetrisGame_0.png"></p>
 
 Note that not all places on the board have to be filled to satisfy the end of game conditions. It's clear that the emply place in the upper right corner of the picture will not be filled until the game is over. For convenience, the game may mark thoses places where no blocks can be placed so that they can be considered filled with the mark instead of blocks. In this case, the game ends when all places on the board are filled with blocks or the mark.
 
-<img align="left" src="doc/NimTetrisGame_1.png"><br clear="left"/>
+<p align="left"><img src="doc/NimTetrisGame_1.png"></p>
 
 Nim tetris is similar to the Nim in many respects but its two-dimensional elements give the game a depth that the original Nim lacks. See [this](Strategy.eng.md) for various strategies to win the game. Nim tetris distributions also contain strong built-in AIs one can challenge. These AIs are easily the most interesting part of the program. See [this](Strategy.eng.md) for the implementation. 
 
@@ -72,7 +72,7 @@ If you want to build the binary from the source code, follow the steps below.
 
 3. Run Cmake-gui, enter the folder where the repository is cloned in (1) and the folder where the project will be installed in (2), and click (3). 
 
-   <img align="left" src="doc/Cmake.eng.png"><br clear="left"/>
+   <p align="left"><img src="doc/Cmake.eng.png"></p>
 
 4. Select a build system you want to use to build the Nim Tetris project. At least one C++ build system must already be installed to pass this step.
 
@@ -89,7 +89,7 @@ If you just run the built binary you will get an error saying that the file 'Nim
 
 ## Contributors
 
-<a href="https://github.com/attltb"><img src="https://avatars.githubusercontent.com/u/77376670?v=4" width="100px;" alt=""/></a>
+<a href="https://github.com/attltb"><img src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a>
 
 <a href="https://github.com/attltb">attltb</a> - game design and programming, AI design and programming, graphic design(~ver.0.1), etcs.
 

@@ -1,6 +1,6 @@
 # Nim Tetris (KOR)
 
-<img align="left" src="doc/title1.png"><br clear="left"/>
+<p align="left"><img src="doc/title1.png"></p>
 
 
 
@@ -16,7 +16,7 @@ Nim tetris는 테트로미노를 이용하는 [Nim](https://en.wikipedia.org/wik
 
 Nim은 몇 개의 줄에 걸쳐 돌(또는 성냥개비 등)을 정해진 갯수만큼 놓아 둔 후 두 플레이어가 번갈아 가며 돌을 제거해 나가는 방식으로 진행됩니다. 다음 그림은 가장 대중적으로 사용되는 (1, 3, 5, 7) 형태의 돌의 초기 배치 방법을 보여 줍니다.
 
-<img align="left" src="doc/NimGame.png"><br clear="left"/>
+<p align="left"><img src="doc/NimGame.png"></p>
 
 각 플레이어는 자신의 턴에 최소한 1개 이상의 돌을 제거해야만 하며, 반드시 하나의 줄에서만 제거해야 합니다. 가령, 위와 같이 초기 돌의 배치가 주어졌다면 선공은 두 번째 줄에서 돌 하나를 제거할 수도, 네 번째 줄의 돌 7개 전체를 제거할 수도 있지만 각 줄에서 돌을 하나씩만 제거하는 등의 행위는 금지됩니다.
 
@@ -28,11 +28,11 @@ Nim은 몇 개의 줄에 걸쳐 돌(또는 성냥개비 등)을 정해진 갯수
 
 Nim tetris는 10x10크기의 보드에 두 플레이어가 번갈아 가며 테트로미노를 놓으면서 진행됩니다. 블록은 보드 위의 어느 위치에든 놓을 수 있으나 겹쳐서 놓을 수는 없습니다. 게임은 더 이상 보드 위에 블록을 놓을 자리가 없게 되었을 때 종료되며, 이 때 마지막으로 블록을 놓은 사람이 패배하게 됩니다.
 
-<img align="left" src="doc/NimTetrisGame_0.png"><br clear="left"/>
+<p align="left"><img src="doc/NimTetrisGame_0.png"></p>
 
 게임의 종료 조건을 만족시키기 위해 반드시 보드의 모든 칸이 채워질 필요는 없다는 데 주목하십시오. 가령, 그림에서 오른쪽 위 모서리의 빈칸은 게임이 끝날 때까지 그 어떤 블록으로도 채워질 수 없습니다. 편의를 위해, 게임은 더 이상 블록을 넣을 수 없는 이런 작은 영역들을 특별히 표시합니다. 이 영역들은 블록 대신 표시로 채워진 것으로 간주될 수 있으며, 게임은 보드 위의 모든 자리가 블록 또는 이 표시로 채워졌을 때 종료됩니다.
 
-<img align="left" src="doc/NimTetrisGame_1.png"><br clear="left"/>
+<p align="left"><img src="doc/NimTetrisGame_1.png"></p>
 
 Nim tetris는 앞서 소개한 Nim과 여러 면에서 유사하지만, 그것이 가진 입체적인 요소는 게임에 원본 Nim에는 없는 깊이를 제공합니다. 게임에서 승률을 높일 수 있는 각종 전략에 대해서는 [이 문서](Strategy.kor.md)를 참조하십시오. Nim tetris에서 가장 흥미로운 요소 중 하나는 내장된 AI와의 대전입니다. 내장된 AI의 구현 원리에 대해서는 [이 문서](Strategy.kor.md)를 참조하십시오.
 
@@ -72,7 +72,7 @@ Q - 배경화면 바꾸기
 
 3. Cmake-gui를 실행시킨 후 (1)에 저장소가 복제된 폴더를, (2)에 프로젝트를 설치할 폴더를 입력하고 (3)을 클릭합니다.
 
-   <img align="left" src="doc/Cmake.kor.png"><br clear="left"/>
+   <p align="left"><img src="doc/Cmake.kor.png"></p>
 
 4. 대화 상자에서 Nim Tetris 프로젝트를 빌드할 때 사용할 빌드 시스템을 선택하십시오. 이 단계를 통과하려면 최소한 하나 이상의 C++ 빌드 시스템이 이미 설치되어 있어야 합니다. 
 
@@ -89,8 +89,6 @@ Q - 배경화면 바꾸기
 
 ## 기여자
 
-<a href="https://github.com/attltb"><img src="https://avatars.githubusercontent.com/u/77376670?v=4" width="100px;" alt=""/></a>
-
-<a href="https://github.com/attltb">attltb</a> - 게임 디자인, AI 설계, 그래픽 디자인(~ver.0.1) 등 작업 전반
+<p align="left"><a href="https://github.com/attltb"><img align="left" src="https://avatars.githubusercontent.com/u/77376670" width="100px;" alt=""/></a> <a href="https://github.com/attltb">attltb</a> - 게임 디자인, AI 설계, 그래픽 디자인(~ver.0.1) 등 작업 전반</p><br clear="left"/>
 
 모든 종류의 기여는 환영합니다.
