@@ -36,7 +36,7 @@ For convenience, the game may mark thoses places where no blocks can be placed s
 
 <p align="left"><img src="doc/NimTetrisGame_1.png"></p>
 
-Nim tetris is similar to the Nim in many respects but its two-dimensional elements give the game a depth that the original Nim lacks. See [this](Strategy.eng.md) for various strategies to win the game. Nim tetris distributions also contain strong built-in AIs one can challenge. These AIs are easily the most interesting part of the program. See [this](Strategy.eng.md) for the implementation. 
+Nim tetris is similar to the Nim in many respects but its two-dimensional elements give the game a depth that the original Nim lacks. See [this](Strategy.eng.md) for various strategies to win the game. Nim tetris distributions also contain strong built-in AIs one can challenge. These AIs are easily the most interesting part of the program. See [this](AI.eng.md) for the implementation. 
 
 
 

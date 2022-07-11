@@ -36,7 +36,7 @@ Nim tetris는 10x10크기의 보드에 두 플레이어가 번갈아 가며 테�
 
 <p align="left"><img src="doc/NimTetrisGame_1.png"></p>
 
-Nim tetris는 앞서 소개한 Nim과 여러 면에서 유사하지만, 그것이 가진 입체적인 요소는 게임에 원본 Nim에는 없는 깊이를 제공합니다. 게임에서 승률을 높일 수 있는 각종 전략에 대해서는 [이 문서](Strategy.kor.md)를 참조하십시오. Nim tetris에서 가장 흥미로운 요소 중 하나는 내장된 AI와의 대전입니다. 내장된 AI의 구현 원리에 대해서는 [이 문서](Strategy.kor.md)를 참조하십시오.
+Nim tetris는 앞서 소개한 Nim과 여러 면에서 유사하지만, 그것이 가진 입체적인 요소는 게임에 원본 Nim에는 없는 깊이를 제공합니다. 게임에서 승률을 높일 수 있는 각종 전략에 대해서는 [이 문서](Strategy.kor.md)를 참조하십시오. Nim tetris에서 가장 흥미로운 요소 중 하나는 내장된 AI와의 대전입니다. 내장된 AI의 구현 원리에 대해서는 [이 문서](AI.kor.md)를 참조하십시오.
 
 
 
