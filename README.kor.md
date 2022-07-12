@@ -46,11 +46,11 @@ Nim tetris는 앞서 소개한 Nim과 여러 면에서 유사하지만, 그것�
 
 마우스/방향키 - 블록 이동
 
-A - 블록 바꾸기 (Z $\rightarrow $  S $\rightarrow $  T $\rightarrow $ J $\rightarrow $ L $\rightarrow $ O $\rightarrow $ I $\rightarrow $ Z)
+A - 블록 바꾸기 (Z → S → T → J → L → O → I → Z)
 
 S - 블록 회전
 
-D - 블록 바꾸기 (I $\rightarrow $ O $\rightarrow $ L $\rightarrow $ J $\rightarrow $ T $\rightarrow $ S $\rightarrow $ Z $\rightarrow $ I)
+D - 블록 바꾸기 (I → O → L → J → T → S → Z → I)
 
 Enter / 마우스 좌클릭 - 블록 놓기
 
